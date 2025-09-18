@@ -67,9 +67,10 @@ public class Library {
                 System.out.println("Book is already in the library.");
                 return;
             }
-            bookList.add(position, book);
-            sortBooks();
+
         }
+        bookList.add(position, book);
+        sortBooks();
     }
 
 
