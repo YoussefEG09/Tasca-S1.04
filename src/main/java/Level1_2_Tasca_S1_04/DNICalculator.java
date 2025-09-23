@@ -7,7 +7,7 @@ public class DNICalculator {
 
 
     public char calculateLetter(int dni) {
-        char[] alphabet = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
+        String alphabet = "TRWAGMYFPDXBNJZSQVHLCKE";
 
 
         // Setting a if conditional to search the letter that corresponds to dni number
@@ -15,6 +15,6 @@ public class DNICalculator {
             throw new IllegalArgumentException("DNI number is not valid.");
         }
         int i = dni % 23;
-        return alphabet[i];
+        return alphabet.charAt(i);
     }
 }
