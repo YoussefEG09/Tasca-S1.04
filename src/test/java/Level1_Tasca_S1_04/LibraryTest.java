@@ -33,7 +33,14 @@ class LibraryTest {
 
     @org.junit.jupiter.api.Test
     void getBooksList() {
-        assertEquals(0, library.getBooksList().size());
+        Book book1 = new Book("Don Quijote");
+        Book book2 = new Book("Harry Potter");
+        Book book3 = new Book("Moby Dick");
+
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+        assertEquals(3, library.getBooksList().size());
 
     }
 

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class ExceptionDemoTest {
 
         @Test
-        public void throwException(){
+        public void throwExceptionTest(){
                 ExceptionDemo instance = new ExceptionDemo();
             assertThrows(ArrayIndexOutOfBoundsException.class, instance::throwException);
         }
