@@ -2,9 +2,7 @@ package Level2_4_TascaS1_04;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,22 +24,25 @@ public class ObjectListAssertionsTest {
 
     @Test
     public void arrayInAnyOrder() {
-        assertTrue(testList.contains(obj1), "List contains object number 1.");
-        assertTrue(testList.contains(obj2), "List contains object number 2.");
-        assertTrue(testList.contains(obj3), "List contains object number 3.");
+        Set<Object> expected = new HashSet<>(Arrays.asList(obj3, obj2, obj1));
+        Set<Object> actual = new HashSet<>(testList);
+
+        assertEquals(expected, actual, "Sets should be equal regardless of order or duplicates.");
 
     }
 
     @Test
-    public void only1InArray(){
+    public void only1InArray() {
+        long count = testList.stream().filter(o -> Objects.equals(o, obj2)).count();
+        assertEquals(1, count, "Object should appear 1 time in the list.");
 
     }
 
 
     @Test
-    public void objectNotInList(){
+    public void objectNotInList() {
         char obj4 = 'Z';
-        assertFalse(testList.contains(obj4), "List should not contains object  number 4 (Char 'Z')");
+        assertFalse(testList.contains(obj4), "List should not contain object  number 4 (Char 'Z')");
     }
 
 
