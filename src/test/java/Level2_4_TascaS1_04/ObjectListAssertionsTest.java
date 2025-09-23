@@ -27,6 +27,7 @@ public class ObjectListAssertionsTest {
         Set<Object> expected = new HashSet<>(Arrays.asList(obj3, obj2, obj1));
         Set<Object> actual = new HashSet<>(testList);
 
+
         assertEquals(expected, actual, "Sets should be equal regardless of order or duplicates.");
 
     }
