@@ -32,7 +32,6 @@ public class BuiltInTypesListTest {
 
         assertThat(data).doesNotHaveDuplicates();
 
-
         assertThat(data).doesNotContain(country);
     }
 }
