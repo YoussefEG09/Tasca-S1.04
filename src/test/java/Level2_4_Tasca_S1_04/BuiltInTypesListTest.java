@@ -30,7 +30,7 @@ public class BuiltInTypesListTest {
         assertThat(data).containsExactlyInAnyOrder(height, name, city, age, active);
 
 
-        assertThat(data).filteredOn(e -> e.equals("Alice")).hasSize(1);
+        assertThat(data).doesNotHaveDuplicates();
 
 
         assertThat(data).doesNotContain(country);
